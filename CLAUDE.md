@@ -1,19 +1,17 @@
-# team-<name> — <your loop in three words>
+# loop-b — Ralph loop
 
 Goal: produce the valid submission.csv with the lowest official score, `./run.sh`, the sum over
 n in {1..25, 50, 100} of s_n² / n, and keep improving it until you are stopped.
 
-## How this loop runs
-<Describe your loop in two or three sentences: one long session, or a fresh session per try, or a
-planner with subagents, or something new. Say who decides, who writes code, who judges, and how
-the loop knows what happened before (LOG.md, git log, PLAN.md).>
-Nobody answers questions. Never declare yourself done early.
+## Two roles, decide which one you are
+- The human asked you to "Run START.md": you are the DRIVER. Follow START.md only: start one fresh
+  headless session per try, never solve, never edit solver/, never write LOG.md yourself.
+- You were started headless with PROMPT.md: you are ONE TRY. The rest of this file is for you.
 
-## Time
-The start message names the duration (30 minutes unless it says otherwise); START_TIME holds the
-start (`cat START_TIME`). Check `date` before every try. Start no try that cannot finish before the
-deadline. In the last 3 minutes: `./run.sh` once more, make sure submission.csv is valid, write the
-final log line, commit, and stop.
+## How this loop runs
+The driver starts a fresh headless session for every try, for 30 minutes (see START.md). You have
+no memory of earlier sessions: LOG.md and `git log` are your memory. Read them, make exactly one try,
+log, exit. Nobody answers questions. Keep the try small: one change, a few minutes.
 
 ## You may
 - write any code in solver/ (new files, any method, any architecture); numpy, scipy, shapely and the
@@ -23,16 +21,19 @@ final log line, commit, and stop.
 
 ## You may not
 - touch metric.py, tile.py, bounds.py, run.sh, tests/ or the leaderboard page; a hook blocks the files
-- look at other teams' branches; the hook blocks that too
-- make two changes in one try, or skip the log line
+- make two changes in one try, make a second try, or skip the log line
 - submit anything your solver did not produce
 
 ## Each try
-1. One change, one hypothesis.
+0. `git status`: uncommitted changes mean the previous session was cut off. `git reset --hard`, log it
+   as reverted. If LOG.md has no entries yet, run `./run.sh` and log the starting score as try 0.
+1. One change, one hypothesis, continuing the plan in the Strategy section.
 2. `./run.sh` — the TOTAL line is the score. INVALID or exit code 124 (2-minute limit) count as worse.
-3. Better than the last kept total: write the LOG.md line, then `git add -A && git commit -m "try N: <change> -> <total>"`
-   (one commit holds code, submission.csv and log line, so nothing is ever half-recorded).
+3. Better than the last kept total in LOG.md: write the LOG.md line (time = minutes since
+   `cat START_TIME`), then `git add -A && git commit -m "try N: <change> -> <total>"` (one commit holds
+   code, submission.csv and log line, so a cut-off session never leaves a half-recorded try).
 4. Worse or INVALID: `git reset --hard` first, then write the LOG.md line and `git commit -am "try N: reverted"`.
+   Then exit.
 
 ## Strategy (edit this)
 `python metric.py submission.csv` prints the gap per n; work on the biggest gaps. Ideas, in order:
@@ -40,4 +41,4 @@ final log line, commit, and stop.
 2. Rows of hats at 36.46° (the n = 1 optimum) interlock; try shifted rows and alternating flips.
 3. Local search: move, rotate or flip one hat, accept when the square shrinks and nothing overlaps.
 4. For n ≥ 25 cut clusters out of the hat tiling: reflected hats, angles in multiples of 60°.
-Rewrite this section when you learn something.
+Rewrite this section when you learn something; the next session reads it.
