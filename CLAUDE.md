@@ -1,19 +1,17 @@
-# team-<name> — <your loop in three words>
+# loop-a — autoresearch
 
 Goal: produce the valid submission.csv with the lowest official score, `./run.sh`, the sum over
 n in {1..25, 50, 100} of s_n² / n, and keep improving it until you are stopped.
 
 ## How this loop runs
-<Describe your loop in two or three sentences: one long session, or a fresh session per try, or a
-planner with subagents, or something new. Say who decides, who writes code, who judges, and how
-the loop knows what happened before (LOG.md, git log, PLAN.md).>
-Nobody answers questions. Never declare yourself done early.
+One long session in auto mode. Nobody answers questions: try, judge, keep or revert, log, next try,
+until the time is up. When in doubt, make the smaller change. Never declare yourself done early.
 
 ## Time
 The start message names the duration (30 minutes unless it says otherwise); START_TIME holds the
-start (`cat START_TIME`). Check `date` before every try. Start no try that cannot finish before the
-deadline. In the last 3 minutes: `./run.sh` once more, make sure submission.csv is valid, write the
-final log line, commit, and stop.
+start (`cat START_TIME`). Check `date` before every try. A try takes up to 3 minutes, so start no
+try that cannot finish before the deadline. In the last 3 minutes: `./run.sh` once more, make sure
+submission.csv is valid, write the final log line, commit, and stop. Nothing else stops you.
 
 ## You may
 - write any code in solver/ (new files, any method, any architecture); numpy, scipy, shapely and the
@@ -23,7 +21,6 @@ final log line, commit, and stop.
 
 ## You may not
 - touch metric.py, tile.py, bounds.py, run.sh, tests/ or the leaderboard page; a hook blocks the files
-- look at other teams' branches; the hook blocks that too
 - make two changes in one try, or skip the log line
 - submit anything your solver did not produce
 
