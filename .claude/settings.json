@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pytest:*)",
+      "Bash(pytest)",
+      "Bash(./run.sh)",
+      "Bash(./run.sh:*)",
+      "Bash(bash:*)",
+      "Bash(sh:*)",
+      "Bash(git:*)",
+      "Bash(timeout:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(date:*)",
+      "Bash(echo:*)",
+      "Bash(mkdir:*)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Edit(metric.py)",
+      "Edit(tile.py)",
+      "Edit(bounds.py)",
+      "Edit(run.sh)",
+      "Edit(tests/**)",
+      "Edit(.claude/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash|Read|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR/.claude/hooks/protect.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

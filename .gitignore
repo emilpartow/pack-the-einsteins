@@ -1,0 +1,9 @@
+plots/
+__pycache__/
+.pytest_cache/
+.venv/
+runs/
+START_TIME
+organiser/
+.claude/organiser
+.vscode/
