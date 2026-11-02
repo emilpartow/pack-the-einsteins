@@ -4,9 +4,9 @@ Goal: produce the valid submission.csv with the lowest official score, `./run.sh
 n in {1..25, 50, 100} of s_n² / n, and keep improving it until you are stopped.
 
 ## How this loop runs
-<Describe your loop in two or three sentences: one long session, or a fresh session per try, or a
-planner with subagents, or something new. Say who decides, who writes code, who judges, and how
-the loop knows what happened before (LOG.md, git log, PLAN.md).>
+<Describe your loop in two or three sentences: one long session, a fresh session per try, or
+something new. Say who decides, who writes code, who judges, and how
+the loop knows what happened before (LOG.md, git log).>
 Nobody answers questions. Never declare yourself done early.
 
 ## Time
