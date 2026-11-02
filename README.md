@@ -54,7 +54,7 @@ submission.csv and prints the official score. Better: `git commit`. Worse: `git 
 
 ## Baseline to beat
 
-**503.868** (lower bound 386.924). The packings are in [leaderboard/emil-partow.csv](leaderboard/emil-partow.csv)
+**494.895** (lower bound 386.924). The packings are in [leaderboard/emil-partow.csv](leaderboard/emil-partow.csv)
 and drawn for every n on https://emilpartow.github.io/einstein/. They are a target, not a starting
 point: the rules only count files your own solver produced.
 
