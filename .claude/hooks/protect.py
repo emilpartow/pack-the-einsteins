@@ -92,7 +92,7 @@ SHARED = {"main", "origin/main", "master", "origin/master", "HEAD", "origin/HEAD
 
 
 def is_other_branch(token: str, current: str, others: set[str]) -> bool:
-    base = re.split(r"[:~^@]", token, 1)[0]            # main:solver/solve.py, loop-b~2, origin/loop-c^
+    base = re.split(r"[:~^@]", token, 1)[0]            # main:solver/solve.py, loop-b~2, origin/loop-b^
     if not base or base == current or base == "origin/" + current or base in SHARED:
         return False
     return base in others or bool(BRANCH_LIKE.match(base))

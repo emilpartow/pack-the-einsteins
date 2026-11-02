@@ -1,7 +1,7 @@
 # START — loop-b (Ralph loop)
 
 **Human:** in this folder run `claude --permission-mode auto` and type `Run START.md`.
-Add "for 60 minutes" to that message if the workshop gives you more time. Everything below is for the agent.
+Add "for 60 minutes" to that message if you want a longer run. Everything below is for the agent.
 To stop early: Ctrl+C, then `/exit`.
 
 **Agent:** you are the DRIVER of this loop, not a solver. You never edit solver/, never run `./run.sh`
