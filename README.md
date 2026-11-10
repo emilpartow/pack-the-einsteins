@@ -54,18 +54,14 @@ submission.csv and prints the official score. Better: `git commit`. Worse: `git 
 
 ## Baseline to beat
 
-**494.895** (lower bound 386.924). The packings are in [leaderboard/emil-partow.csv](leaderboard/emil-partow.csv)
-and drawn for every n on https://emilpartow.github.io/einstein/. They are a target, not a starting
-point: the rules only count files your own solver produced.
+**494.895** (lower bound 386.924). The packings are in [leaderboard/emil-partow.csv](leaderboard/emil-partow.csv).
+They are a target, not a starting point: the rules only count files your own solver produced.
 
 ## Submit
 
 Upload your submission.csv on the leaderboard page: https://claude.ai/artifact/4Q5dpvegXqeUFfzgnC2XhV
 The page scores it in the browser with the same rules as metric.py and shows every team's best live.
 Submit as often as you like; only your best counts.
-
-You can also check a file in the browser and submit it through a GitHub issue on
-https://emilpartow.github.io/einstein/submit/
 
 ## Files
 
